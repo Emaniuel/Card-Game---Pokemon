@@ -120,3 +120,6 @@ body{
 .enemy{
   grid-area: 4/14/8/20;
 }
+.enemy>img{
+  height: 275px;
+}

@@ -1,23 +1,23 @@
 let viewport = document.querySelector("#viewport");
 let cards = document.querySelector(".cards");
         class enemy {
-            constructor(name,strength) {
+            constructor(name,strength,img) {
             this.name = name;
             this.strength = strength;
-            this.img = `img/enemies/${name}.png`;
+            this.img = img;
             }
         }
         function calculate(minstrength,maxstrength){
             return Math.round(Math.random() * (maxstrength - minstrength) + minstrength);
         }
 
-        let pokemony = ["Tyranitar","Azumarin","Chikorita","Entei","Ho-oh","Houndoom","Lugia","Phanpy","Pichu","Raikou"];
+        let pokemony = ["Tyranitar","Azumarill","Chikorita","Entei","Ho-oh","Houndoom","Lugia","Phanpy","Pichu","Raikou"];
         let list=[new enemy(),new enemy(),new enemy(),new enemy(),new enemy(),new enemy(),new enemy(),new enemy(),new enemy(),new enemy(),];
         for(let i=0;i< 10;i++){
             list[i].name = pokemony[i];
             list[i].strength = calculate(300,800)
+            list[i].img = `img/enemies/${pokemony[i]}.png`;
         }
-        console.log(list[1])
         function load_enemy(){
             m = Math.round(Math.random() * (10 - 1));
             let enemy1 = list[m];
@@ -27,16 +27,16 @@ let cards = document.querySelector(".cards");
         }
         function start(){
             viewport.innerHTML = `
-            <div class="card" id="card1"></div>
-            <div class="card" id="card2"></div>
-            <div class="card" id="card3"></div>
-            <div class="card" id="card4"></div>
-            <div class="card" id="card5"></div>
-            <div class="card" id="card6"></div>
-            <div class="card" id="card7"></div>
-            <div class="card" id="card8"></div>
-            <div class="card" id="card9"></div>
-            <div class="card" id="card10"></div>`;
+            <div class="card" id="card1" onclick = 'hero1selected();'></div>
+            <div class="card" id="card2" onclick = 'hero2selected();'></div>
+            <div class="card" id="card3" onclick = 'hero3selected();'></div>
+            <div class="card" id="card4" onclick = 'hero4selected();'></div>
+            <div class="card" id="card5" onclick = 'hero5selected();'></div>
+            <div class="card" id="card6" onclick = 'hero6selected();'></div>
+            <div class="card" id="card7" onclick = 'hero7selected();'></div>
+            <div class="card" id="card8" onclick = 'hero8selected();'></div>
+            <div class="card" id="card9" onclick = 'hero9selected();'></div>
+            <div class="card" id="card10" onclick = 'hero10selected();'></div>`;
             load();
         };
         //funkcja wczytujaca wybór postaci
@@ -51,11 +51,6 @@ let cards = document.querySelector(".cards");
                 let id = `card${x}`;
                 let card = document.getElementById(id)
                 card.innerHTML = `<img src="${this.img}"> ${this.name}`;
-                card.setAttribute('onclick', `hero${x}selected()`);
-
-
-                console.log(x);
-                console.log(this.img);
             }
         }
 
