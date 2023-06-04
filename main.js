@@ -1,10 +1,10 @@
 let viewport = document.querySelector("#viewport");
-        let cards = document.querySelector(".cards");
+let cards = document.querySelector(".cards");
         class enemy {
             constructor(name,strength) {
             this.name = name;
             this.strength = strength;
-            this.img = `img/enemys/${this.name}.png`;
+            this.img = `img/enemies/${name}.png`;
             }
         }
         function calculate(minstrength,maxstrength){
@@ -17,12 +17,13 @@ let viewport = document.querySelector("#viewport");
             list[i].name = pokemony[i];
             list[i].strength = calculate(300,800)
         }
+        console.log(list[1])
         function load_enemy(){
             m = Math.round(Math.random() * (10 - 1));
             let enemy1 = list[m];
-            let class1 = `enemy`;
-            let card = document.getElementByClass(class1)
-            card.innerHTML = `<img src="${enemy1.img}"> ${enemy1.name}`;
+            let card = document.querySelector(".enemy");
+            card.innerHTML = `<img src="${enemy1.img}">`;
+            console.log(enemy1)
         }
         function start(){
             viewport.innerHTML = `
