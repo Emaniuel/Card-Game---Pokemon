@@ -17,20 +17,14 @@ for(let i=0;i< 10;i++){
       list[i].name = pokemony[i];
       list[i].strength = calculate(300,800)
 }
-function load_enemy(){
+function load_enemy()
+load_enemy();{
     m = Math.round(Math.random() * (10 - 1));
     let enemy1 = list[m];
-    let id = `enemy`;
-    let card = document.getElementByClass(id)
-    card.innerHTML = `<img src="${this.img}"> ${this.name}`;
+    let class1 = `enemy`;
+    let card = document.getElementByClass(class1)
+    card.innerHTML = `<img src="${enemy1.img}"> ${enemy1.name}`;
 }
-  
-function onload(){
-    viewport.innerHTML = `<button class="button-54"      role="button" onclick="start();">START</button>`;
-    viewport.style.backgroundImage = `url(img/bg1.gif)`;
-    viewport.style.display = "flex";
-};
-//funkcja wczytujaca ekran nr 1
 function start(){
     viewport.innerHTML = `
     <div class="card" id="card1"></div>
@@ -95,58 +89,77 @@ function hero1selected(){
     viewport.style.backgroundImage = `url(img/bg2.png)`;
     viewport.style.display = "grid";
     Butterfree.load(1);
+    load_enemy();
 }
 function hero2selected(){
-    viewport.innerHTML = `<div class="battle" id="card2"></div>`;
+    viewport.innerHTML = `<div class="battle" id="card2"></div>
+    <div class="enemy"></div>`;
     viewport.style.backgroundImage = `url(img/bg2.png)`;
     viewport.style.display = "grid";
     Bulbasaur.load(2);
+    load_enemy();
 }
 function hero3selected(){
-    viewport.innerHTML = `<div class="battle" id="card3"></div>`;
+    viewport.innerHTML = `<div class="battle" id="card3"></div>
+    <div class="enemy"></div>`;
     viewport.style.backgroundImage = `url(img/bg2.png)`;
     viewport.style.display = "grid";
     Pikachu.load(3);
+    load_enemy();
 }
 function hero4selected(){
-    viewport.innerHTML = `<div class="battle" id="card4"></div>`;
+    viewport.innerHTML = `<div class="battle" id="card4"></div>
+    <div class="enemy"></div>`;
     viewport.style.backgroundImage = `url(img/bg2.png)`;
     viewport.style.display = "grid";
     Hitmonlee.load(4);
+    load_enemy();
 }
 function hero5selected(){
-    viewport.innerHTML = `<div class="battle" id="card5"></div>`;
+    viewport.innerHTML = `<div class="battle" id="card5"></div>
+    <div class="enemy"></div>`;
     viewport.style.backgroundImage = `url(img/bg2.png)`;
     viewport.style.display = "grid";
     Gengar.load(5);
+    load_enemy();
 }
 function hero6selected(){
-    viewport.innerHTML = `<div class="battle" id="card6"></div>`;
+    viewport.innerHTML = `<div class="battle" id="card6"></div>
+    <div class="enemy"></div>`;
     viewport.style.backgroundImage = `url(img/bg2.png)`;
     viewport.style.display = "grid";
     Squirtle.load(6);
+    load_enemy();
 }
 function hero7selected(){
-    viewport.innerHTML = `<div class="battle" id="card7"></div>`;
+    viewport.innerHTML = `<div class="battle" id="card7"></div>
+    <div class="enemy"></div>`;
     viewport.style.backgroundImage = `url(img/bg2.png)`;
     viewport.style.display = "grid";
     Charmander.load(7);
+    load_enemy();
 }
 function hero8selected(){
-    viewport.innerHTML = `<div class="battle" id="card8"></div>`;
+    viewport.innerHTML = `<div class="battle" id="card8"></div>
+    <div class="enemy"></div>`;
     viewport.style.backgroundImage = `url(img/bg2.png)`;
     viewport.style.display = "grid";
     Gyarados.load(8);
+    load_enemy();
 }
 function hero9selected(){
-    viewport.innerHTML = `<div class="battle" id="card9"></div>`;
+    viewport.innerHTML = `<div class="battle" id="card9"></div>
+    <div class="enemy"></div>`;
     viewport.style.backgroundImage = `url(img/bg2.png)`;
     viewport.style.display = "grid";
     Machamp.load(9);
+    load_enemy();
 }
 function hero10selected(){
-    viewport.innerHTML = `<div class="battle" id="card10"></div>`;
+    viewport.innerHTML = `<div class="battle" id="card10"></div>
+    <div class="enemy"></div>`;
     viewport.style.backgroundImage = `url(img/bg2.png)`;
     viewport.style.display = "grid";
     Diglett.load(10);
+    load_enemy();
 }

@@ -6,6 +6,7 @@ body{
     height: 100vh;
     width: 100%;
     display: flex;
+    background-image: url(img/bg1.gif);
     background-size: cover;
     flex-direction: row;
     flex-wrap: wrap;
@@ -115,4 +116,7 @@ body{
 }
 .battle#card8{
   grid-area: 4/4/12/12;
+}
+.enemy{
+  grid-area: 4/14/8/20;
 }
