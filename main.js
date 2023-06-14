@@ -1,5 +1,6 @@
 let viewport = document.querySelector("#viewport");
 let cards = document.querySelector(".cards");
+m = Math.round(Math.random() * (10 - 1));
         class enemy {
             constructor(name,strength,img) {
             this.name = name;
@@ -19,12 +20,12 @@ let cards = document.querySelector(".cards");
             list[i].img = `img/enemies/${pokemony[i]}.png`;
         }
         function load_enemy(){
-            m = Math.round(Math.random() * (10 - 1));
-            let enemy1 = list[m];
             let card = document.querySelector(".enemy");
+            let enemy1 = list[m];
             card.innerHTML = `<img src="${enemy1.img}">`;
-            console.log(enemy1)
+            return enemy1;
         }
+
         function start(){
             viewport.innerHTML = `
             <div class="card" id="card1" onclick = 'hero1selected();'></div>
@@ -50,7 +51,7 @@ let cards = document.querySelector(".cards");
             load(x) {
                 let id = `card${x}`;
                 let card = document.getElementById(id)
-                card.innerHTML = `<img src="${this.img}"> ${this.name}`;
+                card.innerHTML = `<img src="${this.img}"> ${this.name}<input type='hidden' value="${this.strenght}" class="value" id="value">`;
             }
         }
 
@@ -78,17 +79,23 @@ let cards = document.querySelector(".cards");
             Machamp.load(9);
             Diglett.load(10);
         }
-        function hero1selected(){
+
+
+        //wybór postaci =>
+        function hero1selected(x){
             viewport.innerHTML = `<div class="battle" id="card1"></div>
-            <div class="enemy"></div>`;
+            <div class="enemy"></div><div class="war" onclick='switch1()';>Battle</div>`;
             viewport.style.backgroundImage = `url(img/bg2.png)`;
             viewport.style.display = "grid";
             Butterfree.load(1);
             load_enemy();
         }
+
+
+
         function hero2selected(){
             viewport.innerHTML = `<div class="battle" id="card2"></div>
-            <div class="enemy"></div>`;
+            <div class="enemy"></div><div class="war" onclick='switch1()';>Battle</div>`;
             viewport.style.backgroundImage = `url(img/bg2.png)`;
             viewport.style.display = "grid";
             Bulbasaur.load(2);
@@ -96,7 +103,7 @@ let cards = document.querySelector(".cards");
         }
         function hero3selected(){
             viewport.innerHTML = `<div class="battle" id="card3"></div>
-            <div class="enemy"></div>`;
+            <div class="enemy"></div><div class="war" onclick='switch1()';>Battle</div>`;
             viewport.style.backgroundImage = `url(img/bg2.png)`;
             viewport.style.display = "grid";
             Pikachu.load(3);
@@ -104,7 +111,7 @@ let cards = document.querySelector(".cards");
         }
         function hero4selected(){
             viewport.innerHTML = `<div class="battle" id="card4"></div>
-            <div class="enemy"></div>`;
+            <div class="enemy"></div><div class="war" onclick='switch1()';>Battle</div>`;
             viewport.style.backgroundImage = `url(img/bg2.png)`;
             viewport.style.display = "grid";
             Hitmonlee.load(4);
@@ -112,7 +119,7 @@ let cards = document.querySelector(".cards");
         }
         function hero5selected(){
             viewport.innerHTML = `<div class="battle" id="card5"></div>
-            <div class="enemy"></div>`;
+            <div class="enemy"></div><div class="war" onclick='switch1()';>Battle</div>`;
             viewport.style.backgroundImage = `url(img/bg2.png)`;
             viewport.style.display = "grid";
             Gengar.load(5);
@@ -120,7 +127,7 @@ let cards = document.querySelector(".cards");
         }
         function hero6selected(){
             viewport.innerHTML = `<div class="battle" id="card6"></div>
-            <div class="enemy"></div>`;
+            <div class="enemy"></div><div class="war" onclick='switch1()';>Battle</div>`;
             viewport.style.backgroundImage = `url(img/bg2.png)`;
             viewport.style.display = "grid";
             Squirtle.load(6);
@@ -128,7 +135,7 @@ let cards = document.querySelector(".cards");
         }
         function hero7selected(){
             viewport.innerHTML = `<div class="battle" id="card7"></div>
-            <div class="enemy"></div>`;
+            <div class="enemy"></div><div class="war" onclick='switch1()';>Battle</div>`;
             viewport.style.backgroundImage = `url(img/bg2.png)`;
             viewport.style.display = "grid";
             Charmander.load(7);
@@ -136,7 +143,7 @@ let cards = document.querySelector(".cards");
         }
         function hero8selected(){
             viewport.innerHTML = `<div class="battle" id="card8"></div>
-            <div class="enemy"></div>`;
+            <div class="enemy"></div><div class="war" onclick='switch1()';>Battle</div>`;
             viewport.style.backgroundImage = `url(img/bg2.png)`;
             viewport.style.display = "grid";
             Gyarados.load(8);
@@ -144,7 +151,7 @@ let cards = document.querySelector(".cards");
         }
         function hero9selected(){
             viewport.innerHTML = `<div class="battle" id="card9"></div>
-            <div class="enemy"></div>`;
+            <div class="enemy"></div><div class="war" onclick='switch1()';>Battle</div>`;
             viewport.style.backgroundImage = `url(img/bg2.png)`;
             viewport.style.display = "grid";
             Machamp.load(9);
@@ -152,9 +159,21 @@ let cards = document.querySelector(".cards");
         }
         function hero10selected(){
             viewport.innerHTML = `<div class="battle" id="card10"></div>
-            <div class="enemy"></div>`;
+            <div class="enemy"></div><div class="war" onclick='switch1()';>Battle</div>`;
             viewport.style.backgroundImage = `url(img/bg2.png)`;
             viewport.style.display = "grid";
             Diglett.load(10);
             load_enemy();
         }
+function switch1(){
+    let a = document.querySelector('#value').value;
+    let b = load_enemy().strength;
+    if(a>=b){
+        viewport.innerHTML = `<div class="war" onclick="location.reload()">You Won</div>`
+    }
+    else{
+        viewport.innerHTML = `<div class="war" onclick="location.reload()">You Lost</div>`
+    }
+    console.log(a)
+    console.log(b)
+}
